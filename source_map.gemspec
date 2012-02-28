@@ -15,6 +15,7 @@ https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/
 
   gem.required_ruby_version = '>= 1.8.7'
 
+  gem.add_dependency 'json'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
 
