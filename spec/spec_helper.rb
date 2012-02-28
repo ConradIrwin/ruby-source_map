@@ -1,1 +1,1 @@
-require 'lib/source_map'
+require './lib/source_map'
