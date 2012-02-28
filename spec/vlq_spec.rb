@@ -9,6 +9,10 @@ describe SourceMap::VLQ do
     def self.decode(x)
       SourceMap::VLQ.decode(x)[0]
     end
+
+    def self.decode_array(x)
+      SourceMap::VLQ.decode_array(x)
+    end
   end
 
   it 'should be able to encode 0' do
@@ -49,5 +53,11 @@ describe SourceMap::VLQ do
     decode('L').should == -5
     decode('x+B').should == -1000
     decode('hqjG').should == -100000
+  end
+
+  it 'should be able to decode an array' do
+    decode_array('DFLx+BhqjG').should == [-1, -2, -5, -1000, -100000]
+    decode_array('CEKw+BgqjG').should == [1, 2, 5, 1000, 100000]
+    decode_array('/+Z').should == [-13295]
   end
 end

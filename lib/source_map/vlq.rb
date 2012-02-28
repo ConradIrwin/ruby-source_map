@@ -72,6 +72,17 @@ class SourceMap
       [from_vlq_signed(vlq), chars.join('')]
     end
 
+    # Decode an array of variable length quantities from the given string and
+    # return them.
+    def self.decode_array(str)
+      output = []
+      while str != ''
+        int, str = decode(str)
+        output << int
+      end
+      output
+    end
+
     protected
 
     def self.base64_encode(int)
