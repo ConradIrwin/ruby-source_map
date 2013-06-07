@@ -1,1 +1,2 @@
-require './lib/source_map'
+require 'bundler/setup'
+require 'source_map'
