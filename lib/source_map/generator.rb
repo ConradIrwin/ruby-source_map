@@ -200,7 +200,7 @@ class SourceMap
     end
 
     # Encode a vlq. As each field in the output should be relative to the
-    # previous occurance of that field, we keep track of each one.
+    # previous occurrence of that field, we keep track of each one.
     def vlq(num, type)
       ret = num - @previous_vlq[type]
       @previous_vlq[type] = num
