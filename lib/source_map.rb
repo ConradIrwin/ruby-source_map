@@ -1,9 +1,8 @@
-require 'rubygems'
 require 'json'
 
-require File.expand_path("../source_map/vlq.rb", __FILE__)
-require File.expand_path("../source_map/generator.rb", __FILE__)
-require File.expand_path("../source_map/parser.rb", __FILE__)
+require 'source_map/vlq.rb'
+require 'source_map/generator.rb'
+require 'source_map/parser.rb'
 
 class SourceMap
   include SourceMap::Generator
